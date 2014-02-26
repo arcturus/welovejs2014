@@ -30,3 +30,7 @@ https://developer.mozilla.org/en-US/Apps/Developing/Manifest
 Otra lectura recomendable es el siguiente enlace que habla sobre las distintas APIs en FirefoxOS y los permisos requereidos:
 
 https://developer.mozilla.org/en-US/docs/WebAPI
+
+Puedes descargar este paso aquí:
+
+https://github.com/arcturus/welovejs2014/releases/tag/paso-1

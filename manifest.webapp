@@ -1,0 +1,23 @@
+{
+  "name": "Mis contactos",
+  "description": "Chachi aplicación contactil",
+  "launch_path": "/index.html",
+  "version": "1.0.0",
+  "type": "privileged",
+  "icons": {
+    "128": "/style/icons/icon-128.png",
+    "60": "/style/icons/icon-60.png"
+  },
+  "orientation": ["portrait"],
+  "developer": {
+    "name": "Francisco Jordano",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en",
+  "permissions": {
+    "contacts": {
+      "description": "Required for autocompletion in the share screen",
+      "access": "readwrite"
+    }
+  }
+}

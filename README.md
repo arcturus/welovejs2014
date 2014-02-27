@@ -49,3 +49,18 @@ https://developer.mozilla.org/en-US/docs/Web/API/mozContact
 De nuevo puedes descargar el progreso de este paso en el siguiente link:
 
 https://github.com/arcturus/welovejs2014/releases/tag/paso-2
+
+
+### Paso 3: Interacción con otras apps
+Ahora llega el momento de hacer que nuestra aplicación interactue con el resto de aplicaciones del sistema.
+
+Esto se realiza mediante el uso de Web Activities, puedes aprender más sobre web activities aqui:
+
+https://developer.mozilla.org/en-US/docs/WebAPI/Web_Activities
+
+En nuestro caso vamos a usar 2 web activities, una para realizar llamadas a los contactos que tengan número de teléfono y
+otra para cambiar la foto al contacto.
+
+De nuevo puedes descargar el progreso de este paso en el siguiente link:
+
+https://github.com/arcturus/welovejs2014/releases/tag/paso-3

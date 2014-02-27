@@ -34,3 +34,18 @@ https://developer.mozilla.org/en-US/docs/WebAPI
 Puedes descargar este paso aquí:
 
 https://github.com/arcturus/welovejs2014/releases/tag/paso-1
+
+### Paso 2: Usando la API de contactos
+En este segundo paso utilizarmos la API de contactos para traernos la lista de contactos que hay en el sistema y pintarlos en pantalla.
+
+Podeis obtener más información de cómo se usa la API de contactos aquí:
+
+https://developer.mozilla.org/en-US/docs/WebAPI/Contacts
+
+También podeis consultar la referencia de un objeto mozContact que representa los datos que se almacena por contacto:
+
+https://developer.mozilla.org/en-US/docs/Web/API/mozContact
+
+De nuevo puedes descargar el progreso de este paso en el siguiente link:
+
+https://github.com/arcturus/welovejs2014/releases/tag/paso-2

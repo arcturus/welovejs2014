@@ -89,6 +89,7 @@ var App = (function App() {
     }
     var aside = document.createElement('aside');
     var img = document.createElement('img');
+    img.addEventListener('click', updatePhoto);
 
     // Put the photo if any or the default one
     if (contact.photo && contact.photo[0]) {
@@ -105,6 +106,9 @@ var App = (function App() {
     pExtra.textContent = getExtraInfo(contact);
     a.appendChild(pDisplay);
     a.appendChild(pExtra);
+
+    a.addEventListener('click', makeCall);
+
     li.appendChild(a);
 
     // Append to the list
@@ -149,6 +153,67 @@ var App = (function App() {
     }
 
     return extra;
+  }
+
+  function makeCall(evt) {
+    var node = evt.target;
+    while(node && node.tagName !== 'LI') {
+      node = node.parentNode;
+    }
+
+    var phone = node.dataset.phoneNumber;
+
+    if (!phone) {
+      alert('No tiene telefono :P');
+    } else {
+      var activity = new MozActivity({
+        name: 'dial',
+        data: {
+          type: 'webtelephony/number',
+          number: phone
+        }
+      });
+    }
+  }
+
+  function updatePhoto(evt) {
+    var node = evt.target;
+    while(node && node.tagName !== 'LI') {
+      node = node.parentNode;
+    }
+
+    var contactId = node.dataset.contactId;
+    var activity = new MozActivity({
+      name: 'pick',
+      data: {
+        type: 'image/png'
+      }
+    });
+
+    activity.onsuccess = function() {
+      var blob = this.result.blob;
+
+      // Get a contact by contact id
+      var filter = {
+        id: contactId
+      }
+      var request = navigator.mozContacts.find(filter);
+      request.onsuccess = function() {
+        var contact = request.result[0];
+        // Update the photo
+        contact.photo = [blob];
+        // Save the contact
+        navigator.mozContacts.save(contact).onsuccess = function() {
+          // Update the list with the new image
+          var img = node.querySelector('img');
+          updateContactPhoto(img, blob);
+        }
+      };
+    };
+
+    activity.onerror = function() {
+      // We don't update the photo
+    };
   }
 
   return {

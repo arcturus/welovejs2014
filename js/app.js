@@ -71,7 +71,7 @@ var App = (function App() {
   function processContact(contact) {
     /*
       <li data-contact-id="1" data-phone-number="077235678">
-      <aside>
+      <aside class="pack-end">
         <img src="myimage.jpg">
       </aside>
       <a href="#">
@@ -88,6 +88,7 @@ var App = (function App() {
       li.dataset.phoneNumber = contact.tel[0].value;
     }
     var aside = document.createElement('aside');
+    aside.className = 'pack-end';
     var img = document.createElement('img');
     img.addEventListener('click', updatePhoto);
 
